@@ -14,7 +14,7 @@ def pytest_addoption(parser):
 
 
 @pytest.fixture(scope="function")
-def driver(request):
+def setup(request):
     browser_name = request.config.getoption("browser_name")
 
     if browser_name == "chrome":
