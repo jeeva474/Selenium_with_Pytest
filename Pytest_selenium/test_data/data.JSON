@@ -1,0 +1,19 @@
+{
+  "data" : [
+    {
+      "username": "Jeevanandham",
+      "password": "learning"
+    },
+    {
+      "username": "Rahulshettyacademy",
+      "password": "learning"
+    }
+  ],
+  "product": [
+    {"mobile_name" :  "Blackberry",
+      "country":  "India"},
+
+    {"mobile_name" : "Nokia Edge",
+    "country":  "India"}
+  ]
+}
