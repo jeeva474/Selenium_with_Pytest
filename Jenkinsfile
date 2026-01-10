@@ -2,7 +2,8 @@ pipeline {
     agent any
 
     environment {
-        VENV_DIR = "venv"
+    VENV_DIR = "venv"
+    BROWSER_NAME = "${BROWSER_NAME}" ?: "chrome"
     }
 
     stages {
