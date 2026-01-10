@@ -23,7 +23,6 @@ pipeline {
                     . venv/bin/activate
                     pip install --upgrade pip
                     pip install -r requirements.txt
-                    pytest -n auto -v -s  --html=report.html --self-contained-html
                 '''
             }
         }
@@ -33,7 +32,7 @@ pipeline {
                 sh '''
                     . $VENV_DIR/bin/activate
                     cd Pytest_selenium/pytestsdemo
-                    pytest -v -s \
+                    pytest -n auto -v -s \
                         --browser_name=chrome \
                         --html=report.html \
                         --self-contained-html
