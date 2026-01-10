@@ -33,7 +33,7 @@ pipeline {
                     . $VENV_DIR/bin/activate
                     cd Pytest_selenium/pytestsdemo
                     pytest -n auto -v -s \
-                        --browser_name=chrome \
+                        --browser_name=$BROWSER \
                         --html=report.html \
                         --self-contained-html
                 '''
