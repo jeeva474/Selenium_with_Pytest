@@ -1,9 +1,11 @@
 pipeline {
     agent any
 
+    parameters {
+        choice(name: 'BROWSER_NAME', choices: ['chrome', 'firefox', 'edge'], description: 'Select browser to run the pytests')
+    }
     environment {
-    VENV_DIR = "venv"
-    BROWSER_NAME = "${BROWSER_NAME}" ?: "chrome"
+        BROWSER = "${params.BROWSER_NAME}"  // Just take the parameter directly
     }
 
     stages {
