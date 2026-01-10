@@ -20,7 +20,7 @@ def setup(request):
     global driver
     if browser_name == "chrome":
         chrome_options = webdriver.ChromeOptions()
-        chrome_optiona.add_argument("--headless")
+        chrome_options.add_argument("--headless")
         chrome_options.add_argument("--start-maximized")
         chrome_options.add_argument("--ignore-certificate-errors")
         chrome_options.add_argument("--disable-notifications")
@@ -76,4 +76,5 @@ def dataload():
 @pytest.fixture(params=["Google", "FireFox", "IE"])
 def crossbrowser(request):
     return request.param
+
 
