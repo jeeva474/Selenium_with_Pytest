@@ -30,7 +30,7 @@ pipeline {
         stage('Run Pytest Selenium Tests') {
             steps {
                 sh '''
-                    . $VENV_DIR/bin/activate
+                    . venv/bin/activate
                     cd Pytest_selenium/pytestsdemo
                     pytest -n auto -v -s \
                         --browser_name=$BROWSER \
