@@ -23,7 +23,7 @@ pipeline {
                     . venv/bin/activate
                     pip install --upgrade pip
                     pip install -r requirements.txt
-                    pytest -v -s --browser_name=$BROWSER --html=report.html --self-contained-html
+                    pytest -n auto -v -s  --html=report.html --self-contained-html
                 '''
             }
         }
