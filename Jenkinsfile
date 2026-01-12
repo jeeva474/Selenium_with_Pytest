@@ -55,4 +55,3 @@ pipeline {
             echo "✅ Build successful. Selenium tests passed."
         }
     }
-}
