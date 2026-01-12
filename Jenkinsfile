@@ -28,20 +28,19 @@ pipeline {
         }
 
         stage('Run Pytest Selenium Tests') {
-    steps {
-        sh '''
-            . venv/bin/activate
-            cd Pytest_selenium/pytestsdemo
-
-            mkdir -p reports
-
-            pytest -n auto -v -s \
-                --browser_name=$BROWSER \
-                --junitxml=reports/junit-report.xml
-        '''
-    }
-}
-
+            steps {
+                sh '''
+                    . venv/bin/activate
+                    cd Pytest_selenium/pytestsdemo
+        
+                    mkdir -p reports
+        
+                    pytest -n auto -v -s \
+                        --browser_name=$BROWSER \
+                        --junitxml=reports/junit-report.xml
+                '''
+                }
+        }
     post {
     always {
         junit allowEmptyResults: true,
