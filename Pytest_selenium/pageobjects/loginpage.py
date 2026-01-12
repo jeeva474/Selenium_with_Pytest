@@ -29,5 +29,6 @@ class Loginpage(BrowserUtils):
         wait.until(ec.visibility_of_element_located(self.signin_message))
         signin_message = self.driver.find_element(*self.signin_message).text
         print(signin_message)
-        assert "Incorrect" in signin_message
+        assert "Incorrrrrect" in signin_message
+
 
