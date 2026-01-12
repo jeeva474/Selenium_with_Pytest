@@ -32,6 +32,7 @@ pipeline {
                 sh '''
                     . venv/bin/activate
                     cd Pytest_selenium/pytestsdemo
+                    mkdir -p reports
                     pytest -n auto -v -s \
                         --browser_name=$BROWSER \
                         --junitxml=reports/junit-report.xml
