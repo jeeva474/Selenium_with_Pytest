@@ -34,7 +34,7 @@ pipeline {
                     cd Pytest_selenium/pytestsdemo
                     pytest -n auto -v -s \
                         --browser_name=$BROWSER \
-                        --junit-xml=$WORKSPACE/Pytest_selenium/pytestsdemo/allure-results
+                        --junitxml=$WORKSPACE/Pytest_selenium/pytestsdemo/reports/junit-report.xml
                 '''
             }
         }
