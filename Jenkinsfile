@@ -45,7 +45,6 @@ pipeline {
         junit allowEmptyResults: true,
               testResults: 'Pytest_selenium/pytestsdemo/reports/junit-report.xml'
     }
-    }
 
         failure {
             echo "❌ Build failed. Check Selenium logs and screenshots."
@@ -55,3 +54,4 @@ pipeline {
             echo "✅ Build successful. Selenium tests passed."
         }
     }
+}
