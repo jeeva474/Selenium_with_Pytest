@@ -41,6 +41,7 @@ pipeline {
                 '''
                 }
         }
+    }
     post {
     always {
         junit allowEmptyResults: true,
@@ -55,5 +56,4 @@ pipeline {
             echo "✅ Build successful. Selenium tests passed."
         }
     }
-}
 }
