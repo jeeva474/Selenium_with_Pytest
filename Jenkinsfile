@@ -34,24 +34,18 @@ pipeline {
                     cd Pytest_selenium/pytestsdemo
                     pytest -n auto -v -s \
                         --browser_name=$BROWSER \
-                        --html=report.html \
-                        --self-contained-html
+                        --junit-xml=$WORKSPACE/Pytest_selenium/pytestsdemo/allure-results
                 '''
             }
         }
     }
 
     post {
-        always {
-            publishHTML(target: [
-                allowMissing: true,
-                alwaysLinkToLastBuild: true,
-                keepAll: true,
-                reportDir: 'Pytest_selenium/pytestsdemo',
-                reportFiles: 'report.html',
-                reportName: 'Pytest Selenium Report'
-            ])
-        }
+    always {
+        junit allowEmptyResults: true,
+              testResults: 'Pytest_selenium/pytestsdemo/reports/junit-report.xml'
+    }
+    }
 
         failure {
             echo "❌ Build failed. Check Selenium logs and screenshots."
